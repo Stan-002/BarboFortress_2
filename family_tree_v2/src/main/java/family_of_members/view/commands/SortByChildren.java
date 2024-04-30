@@ -6,7 +6,7 @@ public class SortByChildren extends Command {
 
     public SortByChildren(ConsoleUI consoleUI) {
         super(consoleUI);
-        description = "Отсортировать список детей";
+        description = "Sort list of children";
     }
 
     public void execute() {

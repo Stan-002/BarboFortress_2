@@ -10,8 +10,9 @@ package family_of_members.model.family;
 import java.time.LocalDate;
 import java.util.List;
 
+import family_of_members.model.family_member.Children;
 import family_of_members.model.family_member.Gender;
-import family_of_members.model.family_member.MembersOfFamily;
+import family_of_members.model.family_member.Pets;
 
 public interface FamilyItem{
     
@@ -29,8 +30,8 @@ public interface FamilyItem{
 
     String getMother();
 
-    List<MembersOfFamily> getChildren();
+    List<Children> getChild();
 
-    List<MembersOfFamily> getPets();
+    List<Pets> getPet();
 
 }

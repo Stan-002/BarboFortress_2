@@ -8,6 +8,6 @@ public class FamilyMemberComparatorByChildren <T extends FamilyItem> implements 
 
     @Override
     public int compare(T o1, T o2) {
-        return o1.getChildren().size() - o2.getChildren().size();
+        return o1.getChild().size() - o2.getChild().size();
     }
 }

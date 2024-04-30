@@ -4,9 +4,10 @@ import java.time.LocalDate;
 import java.util.List;
 
 import family_of_members.model.family.FamilyTree;
+import family_of_members.model.family_member.Children;
 import family_of_members.model.family_member.FamilyMember;
 import family_of_members.model.family_member.Gender;
-import family_of_members.model.family_member.MembersOfFamily;
+import family_of_members.model.family_member.Pets;
 
 /**
  * Класс Service управляет генеалогическим деревом объектов FamilyMember,
@@ -30,8 +31,8 @@ public class Service {
             LocalDate deathDate,
             String father,
             String mother,
-            List<MembersOfFamily> children,
-            List<MembersOfFamily> pets) {
+            List<Children> child,
+            List<Pets> pet) {
 
         FamilyMember familyMember = new FamilyMember(
                 kind,
@@ -42,15 +43,15 @@ public class Service {
                 deathDate,
                 father,
                 mother,
-                children,
-                pets);
+                child,
+                pet);
 
         family.addFamilyMember(familyMember);
     }
 
-    public String getMembersOfFamilyInfo() {
+    public String getFamilyMemberInfo() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Список членов семьи:\n");
+        stringBuilder.append("List of family members:\n");
 
         // Iterator<FamilyMember> iterator = family.iterator();
         // while (iterator.hasNext()){

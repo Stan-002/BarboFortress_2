@@ -5,7 +5,7 @@ import family_of_members.view.commands.SortByMother;
 public class SortByMother extends Command {
     public SortByMother(ConsoleUI consoleUI) {
         super(consoleUI);
-        description = "Отсортировать список матерей";
+        description = "Sort list of mothers";
     }
 
     public void execute(){

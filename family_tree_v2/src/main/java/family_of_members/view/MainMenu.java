@@ -6,7 +6,8 @@ import java.util.List;
 import family_of_members.view.commands.AddFamilyMember;
 import family_of_members.view.commands.Command;
 import family_of_members.view.commands.Finish;
-import family_of_members.view.commands.GetMembersOfFamilyInfo;
+import family_of_members.view.commands.GetFamilyMemberInfo;
+import family_of_members.view.commands.ReadLineFamilyOfMembers;
 import family_of_members.view.commands.SortByBirthDate;
 import family_of_members.view.commands.SortByChildren;
 import family_of_members.view.commands.SortByDeathDate;
@@ -28,7 +29,8 @@ public class MainMenu {
     public MainMenu(ConsoleUI consoleUI) {
         commandList = new ArrayList<>();
         commandList.add(new AddFamilyMember(consoleUI));
-        commandList.add(new GetMembersOfFamilyInfo(consoleUI));
+        commandList.add(new ReadLineFamilyOfMembers(consoleUI));
+        commandList.add(new GetFamilyMemberInfo(consoleUI));
         commandList.add(new SortByFamilyKind(consoleUI));
         commandList.add(new SortByGender(consoleUI));
         commandList.add(new SortByName(consoleUI));

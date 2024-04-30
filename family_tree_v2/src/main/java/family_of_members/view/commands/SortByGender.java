@@ -5,7 +5,7 @@ import family_of_members.view.ConsoleUI;
 public class SortByGender extends Command {
     public SortByGender(ConsoleUI consoleUI) {
         super(consoleUI);
-        description = "Отсортировать список полов";
+        description = "Sort list of genders";
     }
 
     public void execute() {

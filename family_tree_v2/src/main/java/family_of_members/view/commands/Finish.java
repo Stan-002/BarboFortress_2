@@ -9,7 +9,7 @@ import family_of_members.view.ConsoleUI;
 public class Finish extends Command {
     public Finish(ConsoleUI consoleUI) {
         super(consoleUI);
-        description = "Закончить работу";
+        description = "Finish work";
     }
 
     public void execute(){

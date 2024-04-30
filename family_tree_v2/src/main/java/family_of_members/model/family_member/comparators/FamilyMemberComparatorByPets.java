@@ -8,6 +8,6 @@ public class FamilyMemberComparatorByPets<T extends FamilyItem> implements Compa
 
     @Override
     public int compare(T o1, T o2) {
-        return o1.getPets().size() - o2.getPets().size();
+        return o1.getPet().size() - o2.getPet().size();
     }
 }

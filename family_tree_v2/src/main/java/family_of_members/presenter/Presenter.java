@@ -4,8 +4,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import family_of_members.model.family_member.Children;
 import family_of_members.model.family_member.Gender;
-import family_of_members.model.family_member.MembersOfFamily;
+import family_of_members.model.family_member.Pets;
 import family_of_members.model.service.Service;
 import family_of_members.view.View;
 
@@ -31,8 +32,8 @@ public class Presenter {
             LocalDate deathDate,
             String father,
             String mother,
-            List<MembersOfFamily> children,
-            List<MembersOfFamily> pets) {
+            List<Children> child,
+            List<Pets> pet) {
 
         service.addFamilyMember(
                 kind,
@@ -42,70 +43,62 @@ public class Presenter {
                 deathDate,
                 father,
                 mother,
-                children,
-                pets);
+                child,
+                pet);
 
-        getMembersOfFamilyListInfo();
+        getFamilyMemberListInfo();
     }
 
-    public void getMembersOfFamilyListInfo() {
-        String info = service.getMembersOfFamilyInfo();
+    public void getFamilyMemberListInfo() {
+        String info = service.getFamilyMemberInfo();
         view.printAnswer(info);
     }
 
     public void sortByKind() {
         service.sortByKind();
-        getMembersOfFamilyListInfo();
+        getFamilyMemberListInfo();
     }
 
     public void sortByGender() {
         service.sortByGender();
-        getMembersOfFamilyListInfo();
+        getFamilyMemberListInfo();
     }
 
     public void sortByName() {
         service.sortByName();
-        getMembersOfFamilyListInfo();
+        getFamilyMemberListInfo();
     }
 
     public void sortByBirthDate() {
         service.sortByBirthDate();
-        getMembersOfFamilyListInfo();
+        getFamilyMemberListInfo();
     }
 
     public void sortByDeathDate() {
         service.sortByDeathDate();
-        getMembersOfFamilyListInfo();
+        getFamilyMemberListInfo();
     }
 
     public void sortByFather() {
         service.sortByFather();
-        getMembersOfFamilyListInfo();
+        getFamilyMemberListInfo();
     }
 
     public void sortByMother() {
         service.sortByMother();
-        getMembersOfFamilyListInfo();
+        getFamilyMemberListInfo();
     }
 
     public void sortByChildren() {
         service.sortByChildren();
-        getMembersOfFamilyListInfo();
+        getFamilyMemberListInfo();
     }
 
     public void sortByPets() {
         service.sortByPets();
-        getMembersOfFamilyListInfo();
+        getFamilyMemberListInfo();
     }
-
-    public List<MembersOfFamily> getMembersOfFamilyList1(String childrenString) {
-        List<MembersOfFamily> membersList = new ArrayList<>();
-        return membersList;
-    }
-
-    public List<MembersOfFamily> getMembersOfFamilyList2(String petsString) {
-        List<MembersOfFamily> membersList = new ArrayList<>();
-        return membersList;
-    }
-
 }
+
+
+// FIXME Нельзя совместить список Взрослых и детей с животными! Нужно создать 3 списка

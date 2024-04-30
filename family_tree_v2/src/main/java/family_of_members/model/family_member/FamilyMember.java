@@ -1,6 +1,8 @@
 package family_of_members.model.family_member;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -11,7 +13,8 @@ import family_of_members.model.family.FamilyItem;
  * идентификатор, имя и возраст,
  * реализуя интерфейсы Comparable и FamilyItem.
  */
-public class FamilyMember implements Comparable<FamilyMember>, FamilyItem, Iterable<MembersOfFamily> {
+
+public class FamilyMember implements Comparable<FamilyMember>, FamilyItem {
     private String kind;
     private int id;
     private Gender gender;
@@ -20,11 +23,11 @@ public class FamilyMember implements Comparable<FamilyMember>, FamilyItem, Itera
     private LocalDate deathDate;
     private String father;
     private String mother;
-    private List<MembersOfFamily> children;
-    private List<MembersOfFamily> pets;
+    private List<Children> child = new ArrayList<>();
+    private List<Pets> pet = new ArrayList<>();
 
     public FamilyMember(String kind, int id, Gender gender, String name, LocalDate birthDate, LocalDate deathDate,
-            String father, String mother, List<MembersOfFamily> children, List<MembersOfFamily> pets) {
+            String father, String mother, List<Children> child, List<Pets> pet) {
         this.kind = kind;
         this.id = id;
         this.gender = gender;
@@ -33,20 +36,23 @@ public class FamilyMember implements Comparable<FamilyMember>, FamilyItem, Itera
         this.deathDate = deathDate;
         this.father = father;
         this.mother = mother;
-        this.children = children;
-        this.pets = pets;
+        this.child = child;
+        this.pet = pet;
     }
 
     @Override
     public String toString() {
         return "FamilyMember [kind=" + kind + ", id=" + id + ", gender=" + gender + ", name=" + name + ", birthDate="
-                + birthDate + ", deathDate=" + deathDate + ", father=" + father + ", mother=" + mother + ", children="
-                + children + ", pets=" + pets + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-                + ", iterator()=" + iterator() + ", toString()=" + super.toString() + "]";
+                + birthDate + ", deathDate=" + deathDate + ", father=" + father + ", mother=" + mother + ", child="
+                + child + ", pet=" + pet + "]";
     }
 
     public String getKind() {
         return kind;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public Gender getGender() {
@@ -73,88 +79,67 @@ public class FamilyMember implements Comparable<FamilyMember>, FamilyItem, Itera
         return mother;
     }
 
-    public List<MembersOfFamily> getChildren() {
-        return children;
+    public List<Children> getChild() {
+        return child;
     }
 
-    public List<MembersOfFamily> getPets() {
-        return pets;
+    public List<Pets> getPet() {
+        return pet;
     }
+
+
+    //TODO сделать compareTo в соотвествии с полями
 
     @Override
     public int compareTo(FamilyMember o) {
-        int result = 0;
-        try {
-            if (o == null) {
-                throw new NullPointerException("Cannot compare to null FamilyMember");
-            }
-            result = this.kind.compareTo(o.kind);
-            if (result == 0) {
-                result = this.gender.compareTo(o.gender);
-                if (result == 0) {
-                    result = this.name.compareTo(o.name);
-                    if (result == 0) {
-                        result = this.father == null ? (o.father == null ? 0 : -1) : this.father.compareTo(o.father);
-                        if (result == 0) {
-                            result = this.mother == null ? (o.mother == null ? 0 : -1) : this.mother.compareTo(o.mother);
-                            if (result == 0) {
-                                // Compare children if they exist
-                                if (this.children != null && o.children != null) {
-                                    result = Integer.compare(this.children.size(), o.children.size());
-                                    if (result == 0) {
-                                        // Use iterator instead of indexed loop to avoid IndexOutOfBoundsException
-                                        Iterator<MembersOfFamily> thisIter = this.children.iterator();
-                                        Iterator<MembersOfFamily> oIter = o.children.iterator();
-                                        while (thisIter.hasNext() && oIter.hasNext()) {
-                                            result = thisIter.next().compareTo(oIter.next());
-                                            if (result != 0) {
-                                                break;
-                                            }
-                                        }
-                                    }
-                                } else if (this.children != null) {
-                                    result = 1; // this has children, o does not
-                                } else if (o.children != null) {
-                                    result = -1; // o has children, this does not
-                                }
+        // Compare by kind
+        int result = this.kind.compareTo(o.getKind());
+        if (result != 0) {
+            return result;
+        }
+    
+        // Compare by gender
+        result = this.gender.compareTo(o.getGender());
+        if (result != 0) {
+            return result;
+        }
+    
+        // Compare by name
+        result = this.name.compareTo(o.getName());
+        if (result != 0) {
+            return result;
+        }
+    
+        // Compare by father
+        result = this.father.compareTo(o.getFather());
+        if (result != 0) {
+            return result;
+        }
+    
+        // Compare by mother
+        result = this.mother.compareTo(o.getMother());
+        if (result != 0) {
+            return result;
+        }
+    
+        // Compare by birth date
+        result = this.birthDate.compareTo(o.getBirthDate());
+        if (result != 0) {
+            return result;
+        }
 
-                                // Compare pets if children comparison was inconclusive
-                                if (result == 0 && this.pets != null && o.pets != null) {
-                                    result = Integer.compare(this.pets.size(), o.pets.size());
-                                    if (result == 0) {
-                                        // Use iterator instead of indexed loop to avoid IndexOutOfBoundsException
-                                        Iterator<MembersOfFamily> thisIter = this.pets.iterator();
-                                        Iterator<MembersOfFamily> oIter = o.pets.iterator();
-                                        while (thisIter.hasNext() && oIter.hasNext()) {
-                                            result = thisIter.next().compareTo(oIter.next());
-                                            if (result != 0) {
-                                                break;
-                                            }
-                                        }
-                                    }
-                                } else if (result == 0 && (this.pets != null || o.pets != null)) {
-                                    result = (this.pets != null) ? 1 : -1; // this has pets, o does not
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
+        // Compare by death date
 
-    @Override
-    public Iterator<MembersOfFamily> iterator() {
-        // TODO Итерация для children и pets
-        if (this.children != null) {
-            return this.children.iterator();
+        result = this.deathDate.compareTo(o.getDeathDate());
+        if (result != 0) {
+            return result;
         }
-        if (this.pets != null) {
-            return this.pets.iterator();
+
+        // Compare by id
+        result = this.id - o.getId();
+        if (result != 0) {
+            return result;
         }
-        return iterator();
+        return 0;
     }
 }

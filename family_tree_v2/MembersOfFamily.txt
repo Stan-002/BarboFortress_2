@@ -1,0 +1,6 @@
+
+
+Kind:Human, Gender:MALE, Name:Buba, Birth date:1980-01-09, Death date:null, Father:Babun, Mother:Seliga, Children:Puk, Fuk, Huk, Pets:Jambo
+
+Kind:Human, Gender:FEMALE, Name:Meraye, Birth date:1981-08-04, Death date:null, Father:Guban, Mother:Guzeya, Children:Meraya, Pets:Hotdog
+

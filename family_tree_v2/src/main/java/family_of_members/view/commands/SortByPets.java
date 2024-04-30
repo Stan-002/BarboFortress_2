@@ -6,7 +6,7 @@ public class SortByPets extends Command {
 
     public SortByPets(ConsoleUI consoleUI) {
         super(consoleUI);
-        description = "Отсортировать список питомцей";
+        description = "Sort list of pets";
     }
 
     public void execute() {

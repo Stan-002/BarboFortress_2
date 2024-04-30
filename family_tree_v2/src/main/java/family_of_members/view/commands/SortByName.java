@@ -9,7 +9,7 @@ import family_of_members.view.ConsoleUI;
 public class SortByName extends Command {
     public SortByName(ConsoleUI consoleUI) {
         super(consoleUI);
-        description = "Отсортировать список по имени";
+        description = "Sort list by name";
     }
 
     public void execute(){

@@ -10,7 +10,7 @@ public class AddFamilyMember extends Command{
 
     public AddFamilyMember(ConsoleUI consoleUI) {
         super(consoleUI);
-        description = "Добавить члена семьи";
+        description = "Add a family member";
     }
 
     public void execute(){
