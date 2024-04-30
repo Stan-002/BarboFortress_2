@@ -23,7 +23,7 @@ import family_of_members.presenter.Presenter;
  */
 public class ConsoleUI implements View {
 
-    private static final String INPUT_ERROR = "Вы ввели неверное значение";
+    private static final String INPUT_ERROR = "You entered an incorrect value";
     private Scanner scanner;
     private Presenter presenter;
     private boolean work;
@@ -215,13 +215,18 @@ public class ConsoleUI implements View {
         if (petsString == null) {
             throw new IllegalArgumentException("The family member's pet row cannot be null");
         }
-        List<Pets> pets = new ArrayList<>();
-        for (String pet : petsString.split(",")) {
-            // Проверка на пустую строку
-            if (pet.trim().isEmpty()) {
-                continue;
+        List<Pets> pets;
+        if (petsString.trim().isEmpty()) {
+            pets = new ArrayList<>();
+        } else {
+            pets = new ArrayList<>();
+            for (String pet : petsString.split(",")) {
+                // Проверка на пустую строку
+                if (pet.trim().isEmpty()) {
+                    continue;
+                }
+                pets.add(new Pets(pet.trim()));
             }
-            pets.add(new Pets(pet.trim()));
         }
 
         serialize("MembersOfFamily.txt",
