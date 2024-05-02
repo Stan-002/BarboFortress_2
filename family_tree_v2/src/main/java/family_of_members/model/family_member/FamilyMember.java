@@ -31,9 +31,9 @@ public class FamilyMember implements Comparable<FamilyMember>, FamilyItem {
 
     @Override
     public String toString() {
-        return "FamilyMember [id=" + id + ", kind=" + kind + ", gender=" + gender + ", name=" + name + ", birthDate="
-                + birthDate + ", deathDate=" + deathDate + ", father=" + father + ", mother=" + mother + ", child="
-                + children + ", pet=" + pets + "]";
+        return "FamilyMember [id=" + id + ", Вид:" + kind + ", Пол:" + gender + ", Имя:" + name + ", День рождения:"
+                + birthDate + ", День смерти:" + deathDate + ", Отец:" + father + ", Мать:" + mother + ", Дети:"
+                + children + ", Питомцы:" + pets + "]";
     }
 
     //TODO сделать compareTo в соотвествии с полями
