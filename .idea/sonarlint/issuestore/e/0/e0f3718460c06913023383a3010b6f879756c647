@@ -1,0 +1,11 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìºéÚ
+@	java:S106$"+Replace this use of System.out by a logger.(”“î€
+@	java:S106+"+Replace this use of System.out by a logger.(ç‘¹¶
+E	java:S106,"+Replace this use of System.out by a logger.(•ÒáŸûÿÿÿÿ
+@	java:S106-"+Replace this use of System.out by a logger.(¨¾×ð
+@	java:S1062"+Replace this use of System.out by a logger.(ÆÀûý
+E	java:S1067"+Replace this use of System.out by a logger.(»¿‡Ñýÿÿÿÿ
+@	java:S106:"+Replace this use of System.out by a logger.(ÂþŠÁ
+J
+java:S1068"4Remove this unused "personController" private field.(Ü÷¹æ
