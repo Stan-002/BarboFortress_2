@@ -1,0 +1,11 @@
+
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8Ÿ£è•ö1J$d8d23374-db77-4cf8-8790-b58ca8b95536
+‚
+java:S1118":Add a private constructor to hide the implicit public one.(ÿ”ûÿÿÿÿ8–¨í•ö1J$12541528-05d3-4ac8-880c-12cd4fa0cdfc
+r	java:S106"+Replace this use of System.err by a logger.(Ë•Í¶ûÿÿÿÿ8¤£è•ö1J$2a7ed347-456e-497e-8ebf-b1597663f16b
+m	java:S106""+Replace this use of System.out by a logger.(›ƒœİ8¥£è•ö1J$7eac3faf-2349-4094-b35e-b71a72ec295e
+r	java:S106)"+Replace this use of System.err by a logger.(·§òûÿÿÿÿ8¥£è•ö1J$e316018e-1658-40ba-84c6-999aaa9be050
+r	java:S106/"+Replace this use of System.err by a logger.(ñ¡øÿÿÿÿÿ8¦£è•ö1J$34a052d0-a0db-439d-8776-809f50c3c741
+m	java:S1068"+Replace this use of System.out by a logger.(µÛÑ8§£è•ö1J$09584af1-9ee8-4a98-8961-cf8d8dc05e2e
+q
+java:S1128")Remove this unused import 'Model.Person'.(èë½ëøÿÿÿÿ8¨í•ö1J$2ee0bee9-119e-4f3b-bfab-672d32767eb5

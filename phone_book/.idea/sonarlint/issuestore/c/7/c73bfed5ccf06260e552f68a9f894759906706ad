@@ -1,0 +1,11 @@
+
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìºéÚJ$05fb0a9f-0cb3-42f0-8b26-e3124fbac153
+G	java:S106$"+Replace this use of System.out by a logger.(”“î€8Ðêä’ö1
+m	java:S106+"+Replace this use of System.out by a logger.(ç‘¹¶8¹ œæõ1J$9c24ca20-54f9-4e2e-a6d3-5e16e1e80a78
+r	java:S106,"+Replace this use of System.out by a logger.(•ÒáŸûÿÿÿÿ8¼ œæõ1J$57c5bacf-94b3-4f5e-9ff5-3acea9008de1
+m	java:S106-"+Replace this use of System.out by a logger.(¨¾×ð8½ œæõ1J$44929245-5e58-4287-80db-f2ca01e00eb3
+m	java:S1062"+Replace this use of System.out by a logger.(ÆÀûý8á œæõ1J$17f2d8a1-d458-4567-bf4b-21718c976bf7
+L	java:S1067"+Replace this use of System.out by a logger.(»¿‡Ñýÿÿÿÿ8åêä’ö1
+m	java:S106:"+Replace this use of System.out by a logger.(ÂþŠÁ8á œæõ1J$928096f1-66f3-4fa1-becb-4cfa25dc2ab7
+w
+java:S1068"4Remove this unused "personController" private field.(Ü÷¹æ8æ œæõ1J$c63a3433-3b68-4696-982c-a8ac1ae73d59
